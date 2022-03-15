@@ -1,0 +1,14 @@
+{
+  "name": "app-node",
+  "version": "1.0.0",
+  "description": "mi primera app en node con npm",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}

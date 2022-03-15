@@ -1,0 +1,11 @@
+{
+  "name": "practica-modulo-externo",
+  "version": "1.0.0",
+  "description": "dsfdssdffdsdf",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "brian",
+  "license": "ISC"
+}
