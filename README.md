@@ -24,12 +24,19 @@ git status
 
 Comitear los archivo al stage
 ```
-git commit -m "Mensaje del committ"
+git commit -m "Mensaje deldescriptivo del commit"
 ```
 
-Empujar los archivos al repo remoto
+## SabeR que tipo de repositorio creo GIT - (MAIN o MASTER) 📦
+
+Empujar los archivos al repo remoto --> MAIN
 ```
-git push -u origin main
+git push origin main
+```
+
+Empujar los archivos al repo remoto --> MASTER
+```
+git push origin master
 ```
 
 ## Despliegue a GIT HUB 📦
