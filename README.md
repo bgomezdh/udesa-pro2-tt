@@ -27,7 +27,7 @@ Comitear los archivo al stage
 git commit -m "Mensaje deldescriptivo del commit"
 ```
 
-## SabeR que tipo de repositorio creo GIT - (MAIN o MASTER) 📦
+## Saber que tipo de repositorio creó GIT - (MAIN o MASTER) 📦
 
 Empujar los archivos al repo remoto --> MAIN
 ```
