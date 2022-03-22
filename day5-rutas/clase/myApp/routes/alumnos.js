@@ -20,9 +20,7 @@ router.get('/apellido/:apellido',function(req,res){
     let apellidoBuscado = req.params.apellido;
     let alumnosPorApellido = [];
     for (let i = 0; i < alumnos.lista.length; i++) {
-        console.log("El apellido " + alumnos.lista[i].apellido + " es igual a " + apellidoBuscado);
          if(alumnos.lista[i].apellido.toLowerCase() == apellidoBuscado){
-            
             alumnosPorApellido.push(alumnos.lista[i]);
         } 
     } 
