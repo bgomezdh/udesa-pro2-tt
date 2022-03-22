@@ -3,9 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const alumnosRouter = require('./routes/alumnos')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const alumnosRouter = require('./routes/alumnos')
 
 var app = express();
 
@@ -19,9 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //Prefijos de Rutas
-app.use('/alumnos',alumnosRouter);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/alumnos', alumnosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,18 +1,32 @@
 const express = require('express');
-const router =express.Router();
+const router = express.Router();
 const alumnos = require('../db/alumnos')
 
-router.get('/all',function(req,res){
+router.get('/todos',function(req,res){
     return res.send(alumnos.lista)
 })
+
 router.get('/aprobados',function(req,res){
-    return res.send(alumnos.aprobados(alumnos.lista))
+     let alumnosAprobados = [];
+    for (let i = 0; i < alumnos.lista.length; i++) {
+        if(alumnos.lista[i].calificacion >= 6){
+            alumnosAprobados.push(alumnos.lista[i]);
+        }
+    }
+    return res.send(alumnosAprobados); 
 })
-router.get('/buscar/:dni?',function(req,res){
-    let dni = req.params.dni;
-    if(dni == "undefined"){
-        return res.send("DNI no identificado")
-    }else return res.send(`este es el alumno con el dni:   ${dni}`)
+
+router.get('/apellido/:apellido',function(req,res){
+    let apellidoBuscado = req.params.apellido;
+    let alumnosPorApellido = [];
+    for (let i = 0; i < alumnos.lista.length; i++) {
+        console.log("El apellido " + alumnos.lista[i].apellido + " es igual a " + apellidoBuscado);
+         if(alumnos.lista[i].apellido.toLowerCase() == apellidoBuscado){
+            
+            alumnosPorApellido.push(alumnos.lista[i]);
+        } 
+    } 
+    return res.send(alumnosPorApellido);
 })
 
 module.exports = router;
