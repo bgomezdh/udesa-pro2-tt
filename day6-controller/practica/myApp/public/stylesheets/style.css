@@ -1,0 +1,61 @@
+.body {
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #8e9eab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+header{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: url('../images/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+img{
+  width: 200px;
+}
+
+.titulo{
+  font-size: 50px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+
+
+section{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+article{
+  background-color: #30323f;
+    width: 20%;
+    border: solid 3px #9f9e9e;
+    margin: 2%;
+    color: white;
+}
+
+li{
+  list-style: none;
+}
+
+span{
+  font-weight: bolder;
+}
+
+h1{
+  text-align: center;
+}
