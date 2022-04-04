@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= tipo %> </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body class="body">
+   
+    <%- include('./partials/cabecera')  %> 
+    <h1 style="text-align: center;"><%= tipo %></h1>
+    <section>
+
+       
+      
+            <% for( let i = 0; i < listaAutos.length; i++ ) { %>
+                <article class="listaAutos">
+                    <h1>Auto N° <%= i + 1 %>  </h1>
+                    <ul>
+                        <li><span>Marca: </span>  <%= listaAutos[i].marca %>   </li>
+                        <li><span>Modelo: </span>   <%= listaAutos[i].modelo %> </li>
+                        <li><span>Año: </span>   <%= listaAutos[i].anio %> </li>
+                        <li><span>Color: </span>    <%= listaAutos[i].color %>  </li>
+                    </ul>
+                </article>
+            <% } %>
+        
+    </section>
+
+
+</body>
+
+</html>
