@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <!-- estilos CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/form.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="contenedora">
+      <a href="/movies/all" class="itemContenedora">
+        <img src="/images/logo.png" alt="Soda Estereo" id="logo" /></a>
+
+        <nav class="menuIndex itemContenedora">
+            <ul>
+              <li>
+                <a href="/movies/all" title="películas populares">
+                    Todos
+                </a>
+              </li>
+              <li>
+                <a href="/movies/register" title="géneros">Agregar Pelicula</a>
+              </li>
+            </ul>
+          </nav>
+
+      <form action="/movies/busqueda" class="itemContenedora" method="GET">
+        <input type="text" name="pelicula" placeholder="buscar" value="" />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <p class="alert"></p>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-detalle-busqueda flex-box-c">
+        <form class="form" action="/movies/register" method="POST">
+            <div class="title">Crear una pelicula</div>
+            <div class="input-container ic1">
+              <input id="firstname" class="input" type="text" name="titulo" placeholder="Titulo" />
+            </div>
+            <div class="input-container ic2">
+              <input id="lastname" class="input" type="number" name="premios" placeholder="Premios" />
+            </div>
+            <div class="input-container ic2">
+              <input id="email" class="input" type="date" name="fecha" placeholder="Fecha Creación" />
+            </div>
+            <div class="input-container ic2">
+                <input id="duracion" class="input" type="number" name="duracion" placeholder="Duración" />
+            </div>
+              <div class="input-container ic2">
+                <select class="seleccion" name="genero" id="genero">
+                    <option value="1" selected>Comedia</option>
+                    <option value="2">Terror</option>
+                    <option value="3">Drama</option>
+                    <option value="4">Accion</option>
+                </select>
+              </div>
+            <button type="text" class="submit">submit</button>
+
+
+          </form>
+
+      </section>
+
+
+    </section>
+  </main>
+
+
+</body>
+</html>
+
+

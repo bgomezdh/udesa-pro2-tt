@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <!-- estilos CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="contenedora">
+      <a href="/movies/all" class="itemContenedora">
+        <img src="/images/logo.png" alt="Soda Estereo" id="logo" /></a>
+
+      <nav class="menuIndex itemContenedora">
+        <ul>
+          <li>
+            <a href="/movies/all" title="películas populares">
+                Todos
+            </a>
+          </li>
+          <li>
+            <a href="/movies/register" title="géneros">Agregar Pelicula</a>
+          </li>
+        </ul>
+      </nav>
+
+      <form action="/movies/busqueda" class="itemContenedora" method="GET">
+        <input type="text" name="pelicula" placeholder="buscar" value="" />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <p class="alert"></p>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-detalle-busqueda flex-box-c">
+      <h2>Generos</h2>
+
+
+      <section class="section-playlist">
+
+        <ol class="flex-box-c">
+          <% for( let i = 0; i < listaPeliculas.length; i++ ) { %>
+            <li class="li">
+              <a href="/movies/id/<%= listaPeliculas[i].id %>"><%= listaPeliculas[i].title %> </a> 
+              
+              
+              
+              
+              
+              
+              <!-- <a href="/movies/editMovie/<%= listaPeliculas[i].id %>">Modificar</a>
+             | <a href="/movies/deleteMovie/<%= listaPeliculas[i].id %>">Eliminar</a> -->
+            </li>
+          <% } %>
+          
+        </ol>
+
+      </section>
+
+
+    </section>
+  </main>
+
+
+</body>
+</html>

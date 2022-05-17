@@ -1,0 +1,657 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/*
+----------------
+reglas generales
+y para celulares
+----------------
+*/
+
+body {
+  background: #000;
+  color: white;
+  font-family: "trebuchet ms", helvetica, sans-serif;
+
+  /* para que el footer quede abajo */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+img {
+  /* para que las imÃ¡genes nunca sean mayores que la caja que las contienen */
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.oculto{
+  display: none;
+}
+.flex-box-r{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-box-c{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-solid{
+  cursor: pointer;
+}
+
+header,
+footer {
+  background-color: #222;
+  height: 120px;
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ã­conos */
+
+.material-icons {
+  padding-left: .75em;
+}
+
+form .material-icons {
+  padding-left: 0;
+}
+
+/* contenedor centrado y con ancho mÃ¡ximo */
+.contenedora {
+  width: min(75rem, 100%);
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.itemContenedora{
+  border-radius: 20px;
+}
+
+.contenedorLottie{
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+/*
+----------------
+encabezado
+----------------
+*/
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.itemContenedora{
+  height: 50px;
+}
+
+header .contenedora,
+footer .contenedora {
+
+  /* caja flexible */
+  display: flex;
+
+  /* si elementos no caben, van a la lÃ­nea inferior */
+  flex-wrap: wrap;
+
+  /* elementos colocados en los extremos del eje principal */
+  justify-content: space-between;
+
+  /* elementos centrados en el eje secundario */
+  align-items: center;
+  height: 15vh;
+}
+
+header img,
+footer img {
+  display: block;
+  width: 10em;
+}
+
+/* *** bÃºsqueda *** */
+
+form {
+display: flex;
+flex-wrap: wrap;
+position: relative;
+
+}
+
+input {
+padding: .35em;
+background: rgba(255, 255, 255, 0.25);
+}
+
+input:focus {
+  background: white;
+}
+
+header ::placeholder {
+  color: rgb(0, 0, 0);
+}
+
+form button { padding: .25em;}
+
+
+
+/* *** menu *** */
+
+.menuIndex ul {
+  flex-direction: row;
+  display: flex;
+}
+
+header nav {
+  color: white;
+}
+
+header nav a {
+  color: rgba(255,255,255,.75);
+  padding: 1em 3.5em .5em 1em;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav a:hover {
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+}
+
+/* boton que llama al menu */
+
+#llamamenu,
+form button {
+  background-color: rgba(200, 255, 255, 0.125);
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  width: 2.5em;
+  border-radius: 30px;
+  /* caja flexible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.itemContenedora{
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* *** main *** */
+
+
+#main h1{
+  text-align: center;
+}
+
+
+
+
+section {
+  background: rgb(0 0 0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 1em;
+  transition: border 1s ease, padding .8s ease-in, color .6s ease-in;
+  gap: 1em;
+}
+
+section h2 {
+  padding-bottom: .25em;
+}
+
+article {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: .25em;
+  flex-grow: 1;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  transition: all .6s ease;
+}
+
+
+#pelisTopRated article a,
+#pelisPopulares article a,
+#seriesPopulares article a,
+.detalleGenero article a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+article:hover,
+#pelisTopRated article:hover {
+  background: rgb(159 159 159 / 85%);
+  transition: all .3s ease;
+}
+
+#discos article a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+article a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+article:hover a {
+  color: white;
+}
+
+
+
+article img {
+  border: solid 4px #c3c3c3;
+    box-shadow: -13px 3px 14px 6px rgb(0 0 0 / 25%);
+    object-fit: cover;
+    display: block;
+}
+
+#artistas img {
+  border-radius: 50%;
+}
+
+.detalleGenero #artistas img {
+  border-radius: unset;
+}
+
+
+.clave {
+  color: #000000;
+    font-size: 35px;
+    font-style: oblique;
+    font-weight: inherit;
+}
+
+
+/* *** pie *** */
+
+
+footer img:last-of-type {
+  width: 6em;
+}
+
+footer p {
+  text-align: right;
+  margin-left: auto;
+  width: clamp(12em, 60%, calc(100% - 11em));
+}
+
+/* generos */
+
+.generos,
+.playlist {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#generos,
+.playlist > section {
+  flex-grow: 1;
+}
+
+#generos article {
+  padding: 0;
+}
+
+#generos article a {
+  display: block;
+  position: relative;
+}
+
+#generos article a h3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all .6s ease;
+  padding: 1em;
+}
+
+#generos article:hover a h3 {
+  background: rgba(255, 255, 255, 0.5);
+  color: black;
+  transition: all .3s ease;
+}
+
+/* Detalle-cancion */
+
+.play-control{
+  width: 300px;
+  justify-content: space-evenly;
+}
+
+#trackDisco h2,
+#tracksAlbum h2 {
+  width: max(10rem, 40%);
+}
+
+
+#tracksAlbum h2 ul,
+#tracksAlbum h2 ul li {
+  width: 100%;
+  display: block;
+}
+
+.detallePeli a,
+.detalleSerie a,
+.detalleArtista a {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 3px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.detallePeli a:hover,
+.detalleSerie a:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+#paraPlaylist span {
+  font-size: smaller;
+  vertical-align: middle;
+}
+
+#paraPlaylist a {
+  background: rgba(255, 255, 255, .1);
+  border-radius: 4px;
+  padding: .25em .5em;
+}
+
+#paraPlaylist a:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+#paraPlaylist a:last-child {
+  width: max(10rem, 40%);
+}
+
+#player {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#player > * {
+  width: max(40%, 10rem);
+}
+#player * { max-width: 100%;}
+
+
+.detalleAlbum,
+.detalleTrack {
+  display: flex;
+  flex-direction: column;
+}
+.detalleTrack,
+.detalleAlbum #player,
+.detalleTrack #player { flex-grow: 1; }
+.detalleAlbum #player {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.detalleAlbum #player article {
+  width: max(10em, 45%);
+}
+.detalleAlbum #player > h2 {
+  width: 100%;
+}
+
+
+/* playlist */
+
+.video-i{
+  width: 900px;
+  height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Detalle artista */
+
+.img-artista{
+  max-width: 400px;
+  height: auto;
+}
+
+#filtro h2 button {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  cursor: pointer;
+  flex-grow: 1;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: .5rem 0;
+  width: max(25%, 4rem);
+  transition: all .6s ease;
+}
+#filtro h2 button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+#filtro h2 button.actual {
+  background: white;
+  color: darkcyan;
+  transition: all .3s ease;
+}
+
+article.circulo {
+  background: rgba(0, 0, 0, .25);
+}
+article.circulo:hover {
+  background: rgba(255, 255, 255, .75);
+}
+.busqueda article.circulo a {
+  align-items: center;
+}
+.circulo img {
+  border-radius: 50%;
+}
+
+/* playlist */
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+}
+.playlist section {
+  flex-grow: 1;
+}
+
+.playlist article {
+  width: max(30%, 10rem);
+}
+
+.playlist section.nada article {
+  flex-grow: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.playlist article h2 {
+  flex-grow: 1;
+}
+
+.playlist article a {
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.playlist article a img {
+  width: max(40%, 5rem);
+}
+
+/* List especial */
+
+ul {
+  counter-reset: index;  
+  padding: 0;
+  max-width: 300px;
+}
+
+/* List element */
+
+.li {
+  counter-increment: index;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  width: 650px;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+
+/* Element counter */
+.li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 2rem;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, #18d860, #d70303);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Element separation */
+.li + .li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.li a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+@media (max-width:420px) {
+  #header, #header .contenedora{
+      height: 350px;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+
+  #header{
+      position: unset;
+      
+  }
+
+  #footer{
+      height : 300px;
+  }
+
+  .menuIndex{
+      height : 200px;
+  }
+
+  .menuIndex ul{
+      flex-direction: column;
+  }
+
+  #header nav a {
+      justify-content: center;
+  }
+
+  #header nav a {
+      padding: 10px 0px;
+      
+  }
+
+  section h2 {
+      text-align: center;
+  }
+
+  .sectionMusica article {
+      width: 200px;  
+      background: rgba(255, 255, 255, 0.35);
+      justify-content: center;
+      align-items: center;
+     
+  }
+
+  .img-artista {
+      max-width: 200px;
+     
+  }
+
+
+     
+}
