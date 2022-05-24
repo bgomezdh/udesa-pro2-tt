@@ -11,33 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header id="header">
-    <div class="contenedora">
-      <a href="/movies/all" class="itemContenedora">
-        <img src="/images/logo.png" alt="Soda Estereo" id="logo" /></a>
-
-        <nav class="menuIndex itemContenedora">
-            <ul>
-              <li>
-                <a href="/movies/all" title="películas populares">
-                    Todos
-                </a>
-              </li>
-              <li>
-                <a href="/movies/register" title="géneros">Agregar Pelicula</a>
-              </li>
-            </ul>
-          </nav>
-
-      <form action="/movies/busqueda" class="itemContenedora" method="GET">
-        <input type="text" name="pelicula" placeholder="buscar" value="" />
-        <button type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <p class="alert"></p>
-      </form>
-    </div>
-  </header>
+  <%- include('./partials/header.ejs')  %> 
 
   <main>
     <section class="section-detalle-busqueda flex-box-c">
@@ -47,7 +21,7 @@
               <input id="firstname" class="input" type="text" name="titulo" placeholder="Titulo" value="<%= movie.title %>"/>
             </div>
             <div class="input-container ic2">
-              <input id="rating" class="input" type="number" name="calificacion" placeholder="Calificacion" value="<%= movie.rating %>" />
+              <input id="rating" class="input" type="number" name="valuacion" placeholder="Valuación" value="<%= movie.rating %>" />
             </div>
             <div class="input-container ic2">
               <input id="lastname" class="input" type="number" name="premios" placeholder="Premios" value="<%= movie.awards %>" />
