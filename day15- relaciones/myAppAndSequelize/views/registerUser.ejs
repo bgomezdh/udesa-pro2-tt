@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <!-- estilos CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/form.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('./partials/header.ejs')  %> 
+
+  <main>
+
+    
+    <% if(locals.erroresLogin){ %>
+      <p class="mensajeError" style="color: red;"> <%= erroresLogin.message %>
+      </p>
+  <% } %>
+
+
+    <section class="section-detalle-busqueda flex-box-c">
+        <form class="form" action="/users/register" method="POST">
+            <div class="title">Registrate</div>
+            <div class="input-container ic1">
+              <input id="name" class="input" type="text" name="name" placeholder="name" />
+          </div>
+            <div class="input-container ic1">
+                <input id="password" class="input" type="email" name="email" placeholder="email" />
+            </div>
+
+            <div class="input-container ic1">
+                <input id="password" class="input" type="password" name="password" placeholder="Clave" />
+            </div>
+            <button type="text" class="submit">submit</button>
+          </form>
+
+      </section>
+
+
+    </section>
+  </main>
+
+
+</body>
+</html>
+
+

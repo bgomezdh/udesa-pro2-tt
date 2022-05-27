@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <!-- estilos CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/form.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('./partials/header.ejs')  %> 
+
+  <main>
+    <section class="section-detalle-busqueda flex-box-c">
+        <form class="form" action="/movies/editMovie/<%= movie.id %> " method="POST">
+            <h6 class="title">Modificar una pelicula</h6>
+            <div class="input-container ic1">
+              <input id="firstname" class="input" type="text" name="titulo" placeholder="Titulo" value="<%= movie.title %>"/>
+            </div>
+            <div class="input-container ic2">
+              <input id="rating" class="input" type="number" name="valuacion" placeholder="Valuación" value="<%= movie.rating %>" />
+            </div>
+            <div class="input-container ic2">
+              <input id="lastname" class="input" type="number" name="premios" placeholder="Premios" value="<%= movie.awards %>" />
+            </div>
+            <div class="input-container ic2">
+              <input id="fecha" class="input" type="date" name="fecha" placeholder="Fecha Creación" min="<%=movie.release_date%>" mix="<%=movie.release_date%>" value="<%=movie.release_date%>"/>
+            </div>
+            <div class="input-container ic2">
+                <input id="duracion" class="input" type="number" name="duracion" placeholder="Duración" value="<%= movie.length %>"/>
+            </div>
+              <div class="input-container ic2">
+                <select class="seleccion" name="genero" id="genero">
+                    <option value="1" selected>Comedia</option>
+                    <option value="2">Terror</option>
+                    <option value="3">Drama</option>
+                    <option value="4">Accion</option>
+                </select>
+              </div>
+            <button type="text" class="submit">submit</button>
+
+
+          </form>
+
+      </section>
+
+
+    </section>
+  </main>
+
+
+</body>
+</html>
