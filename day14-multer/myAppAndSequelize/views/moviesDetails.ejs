@@ -25,13 +25,7 @@
           <h2><span class="clave">Premios:</span> <%= movie.awards %></h2>
           <h2><span class="clave">Estreno:</span> <%= movie.release_date %></h2>
           <h2><span class="clave">Duración:</span> <%= movie.length %></h2>
-          <h2><span class="clave">Genero:</span> <%= movie.genres.name %></h2>
-          <h2>Actores:</h2>
-          <ul>
-            <% for (let i=0; i<movie.actors.length; i++) { %>
-              <li> <%= movie.actors[i].first_name + ', ' + movie.actors[i].last_name %> </li>
-            <% } %>
-          </ul>
+          
         </div>
         
         

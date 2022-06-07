@@ -31,25 +31,7 @@ const movieController = {
   },
   show : (req, res) => {
     let id = req.params.id;
-
-    movie.findByPk(id, {
-      include: [
-        {association : 'genres'},
-        {association : 'actors', 
-        include: [
-          {association: 'otro association'}
-        ]
-      }
-      ]
-
-      /* {
-        all: true,        //Nos trae todas las associations
-        nested: true      //Nos trae todas las associations anidadas
-      } */
-
-      
-      
-    }).then((result) =>{
+    movie.findByPk(id).then((result) =>{
 
       let date = result.release_date;
       let fechaFormateada = new Date(date).toISOString().slice(0,10);
@@ -60,8 +42,7 @@ const movieController = {
         awards : result.awards,
         release_date : fechaFormateada,
         length : result.length,
-        genres : result.genres, // un objeto que va a tener: name, ranking y active.
-        actors : result.actors  // un array de objetos, y cada objeto va a ser un actor, que va a tener: first_name, last_name, ranking.
+        genre_id : result.genre_id
       }
       
       return res.render("moviesDetails", {
