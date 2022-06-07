@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <!-- estilos CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  
+  <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerLogueado.ejs')  %> 
+  <% }else {%>
+        <%- include('./partials/header.ejs')  %> 
+  <% } %> 
+
+  <main>
+    <section class="section-detalle-busqueda flex-box-c">
+      <h2>Generos</h2>
+
+      <h3>Visita numero : <%= contador %> </h3>
+
+      <section class="section-playlist">
+
+        <ol class="flex-box-c">
+          <% for( let i = 0; i < listaPeliculas.length; i++ ) { %>
+            <li class="li">
+              <a href="/movies/id/<%= listaPeliculas[i].id %>"><%= listaPeliculas[i].title %> </a> 
+             <!--  crear link hacia movies/editMovie/id -->
+             <a class="btn" href="/movies/editMovie/<%= listaPeliculas[i].id %>">Editar</a> 
+            </li>
+          <% } %>
+          
+        </ol>
+
+      </section>
+
+
+    </section>
+  </main>
+
+
+</body>
+</html>
